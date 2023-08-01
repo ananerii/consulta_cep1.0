@@ -1,0 +1,76 @@
+<mat-toolbar>
+<button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+<mat-icon>menu</mat-icon>
+</button>
+<span>Consultar Cep</span>
+</mat-toolbar>
+
+<div class="fundo">
+
+<div class="stars">
+    <span style="--i:11"> </span>
+    <span style="--i:17"> </span>
+    <span style="--i:24"> </span>
+    <span style="--i:14"> </span>
+    <span style="--i:9"> </span>
+    <span style="--i:2"> </span>
+    <span style="--i:28"> </span>
+    <span style="--i:16"> </span>
+    <span style="--i:22"> </span>
+    <span style="--i:2"> </span>
+    <span style="--i:13"> </span>
+    <span style="--i:27"> </span>
+    <span style="--i:17"> </span>
+    <span style="--i:9"> </span>
+    <span style="--i:15"> </span>
+    <span style="--i:24"> </span>
+    <span style="--i:12"> </span>
+    <span style="--i:26"> </span>
+    <span style="--i:11"> </span>
+    <span style="--i:17"> </span>
+    <span style="--i:24"> </span>
+    <span style="--i:14"> </span>
+    <span style="--i:9"> </span>
+    <span style="--i:2"> </span>
+    <span style="--i:28"> </span>
+    <span style="--i:16"> </span>
+    <span style="--i:22"> </span>
+    <span style="--i:2"> </span>
+    <span style="--i:13"> </span>
+    <span style="--i:27"> </span>
+    <span style="--i:17"> </span>
+    <span style="--i:9"> </span>
+    <span style="--i:15"> </span>
+    <span style="--i:24"> </span>
+    <span style="--i:12"> </span>
+    <span style="--i:26"> </span>
+   
+</div>
+
+<form [formGroup]="form">
+
+<div class="corp">
+<p>INFORME UM CEP :</p>
+<mat-form-field appearance="outline">
+<input [(ngModel)]="zerarInput" matInput placeholder="digite um cep" maxlength="8" formControlName="cep">
+</mat-form-field>
+</div>
+
+<div class="botoes">
+<button (click)="consultacep()" mat-raised-button appearance="outline">CONSULTAR</button>
+<button (click)=" desfazer()" mat-raised-button appearance="outline">DESFAZER</button>
+</div>
+
+</form>
+
+<div class="result" *ngIf="saida">
+<p>CEP:{{saida.cep}}</p>
+<p>Rua:{{saida.logradouro}}</p>
+<p>Bairro:{{saida.bairro}}</p>
+<p>Cidade:{{saida.localidade}}</p>
+<p>UF:{{saida.uf}}</p>
+<p>DDD:{{saida.ddd}}</p>
+</div>
+
+</div>
+<router-outlet></router-outlet>
